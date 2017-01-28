@@ -35,18 +35,24 @@ Check paths, and which version of R we're using
 ```{r version}
 Sys.getenv("PATH")
 
+.libPaths()
+
 version
 
 ```
 
-# Install from github
+# Install R library from github
 
 This seems straightforward enough AS LONG AS you've got the correct bit installed on your PC.
-Easier said than done, this took me a day to configure. You need the "devtools" package installed, and the "additional build tools". devtools is on CRAN so easy enough, but RTools34.exe needs to be downloaded from some other place, and then installed. You need (or at least I needed) to right click and "Run as administrator" to get the install to give you the prompts that are needed to set the path correctly, otherwise it will appear to install, but then not be found, leaving you in an endless loop.
+Easier said than done, this took me a day to configure. You need the "devtools" package installed, and the "additional build tools". devtools is on CRAN so easy enough, but RTools34.exe needs to be downloaded from some other place, and then installed. You need (or at least I needed) to right click and "Run as administrator" to get the install to give you the prompts that are needed to set the path correctly, otherwise it will appear to install, but then not be found, leaving you in an endless loop. Sounds obvious enough once you have it figured out.
 
 After you have this all configured, then you can install a library from github instead of CRAN using -
 
 install_github("suzannefox/cats-test")
 
-IMO This is all very hacky and much like life was in the early eighties with command line stuff all over the place. Some singularity proximity.
+Then ...
+> library(cats)
+> cat_function(TRUE)
+
+FWIW - IMO This is all very hacky and much like life was in the early eighties with command line stuff all over the place. Some singularity proximity.
 
