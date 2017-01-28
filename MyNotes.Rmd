@@ -1,0 +1,40 @@
+---
+title: "R Notes"
+author: "Suzanne"
+date: "28 January 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Installs
+
+Install package if it's not already there, devtools in this case
+
+```{r CheckInstall}
+# If devtools isn't there then install it
+if ("devtools" %in% rownames(installed.packages()) == FALSE) {
+  install.packages("devtools")
+} else {
+  print("devtools already installed")
+}
+```
+
+## Versions and libraries
+
+Check which version of R we're using
+
+```{r version, echo=FALSE}
+version
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
