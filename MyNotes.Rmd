@@ -30,11 +30,23 @@ if ("devtools" %in% rownames(installed.packages()) == FALSE) {
 
 ## Versions and libraries
 
-Check which version of R we're using
+Check paths, and which version of R we're using
 
-```{r version, echo=FALSE}
+```{r version}
+Sys.getenv("PATH")
+
 version
 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Install from github
+
+This seems straightforward enough AS LONG AS you've got the correct bit installed on your PC.
+Easier said than done, this took me a day to configure. You need the "devtools" package installed, and the "additional build tools". devtools is on CRAN so easy enough, but RTools34.exe needs to be downloaded from some other place, and then installed. You need (or at least I needed) to right click and "Run as administrator" to get the install to give you the prompts that are needed to set the path correctly, otherwise it will appear to install, but then not be found, leaving you in an endless loop.
+
+After you have this all configured, then you can install a library from github instead of CRAN using -
+
+install_github("suzannefox/cats-test")
+
+IMO This is all very hacky and much like life was in the early eighties with command line stuff all over the place. Some singularity proximity.
+
