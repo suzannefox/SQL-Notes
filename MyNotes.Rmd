@@ -8,6 +8,9 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Github
+
+Remember to push updates to github from D:/R/R-Notes
 
 ## R Markdown
 
@@ -41,7 +44,7 @@ version
 
 ```
 
-# Install R library from github
+## Install R library from github
 
 This seems straightforward enough AS LONG AS you've got the correct bit installed on your PC.
 Easier said than done, this took me a day to configure. You need the "devtools" package installed, and the "additional build tools". devtools is on CRAN so easy enough, but RTools34.exe needs to be downloaded from some other place, and then installed. You need (or at least I needed) to right click and "Run as administrator" to get the install to give you the prompts that are needed to set the path correctly, otherwise it will appear to install, but then not be found, leaving you in an endless loop. Sounds obvious enough once you have it figured out.
@@ -54,5 +57,43 @@ Then ...
 > library(cats)
 > cat_function(TRUE)
 
-FWIW - IMO This is all very hacky and much like life was in the early eighties with command line stuff all over the place. Some singularity proximity.
+FWIW - IMO This is all very hacky and much like life was in the early eighties with command line stuff all over the place.
+
+## Creating S3 objects
+
+Based on : https://www.programiz.com/r-programming/S3-class
+With expanded bits
+
+\# this is valid
+s1 <- student("Paul", 26, 3.7)
+
+\# throw an error
+s2 <- student("Paul", 26, 5)
+
+\# ==============================================
+
+\# create an S3 class
+
+\# ==============================================
+
+student <- function(n,a,g) {
+  # we can add our own integrity checks
+  if(g>4 || g<0)  stop("GPA must be between 0 and 4")
+  
+  a <- a*2
+  
+  # create a dataframe
+  x1 <- c(2, 3, 5) 
+  x2 <- c("aa", "bb", "cc") 
+  x3 <- c(TRUE, FALSE, TRUE) 
+  df <- data.frame(x1, x2, x3) 
+  
+  # load the values of this object
+  value <- list(name = n, age = a, GPA = g, test=df)
+  
+  # class can be set using class() or attr() function
+  attr(value, "class") <- "student"
+  value
+}
+
 

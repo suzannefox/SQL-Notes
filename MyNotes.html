@@ -124,6 +124,10 @@ $(document).ready(function () {
 </div>
 
 
+<div id="github" class="section level2">
+<h2>Github</h2>
+<p>Remember to push updates to github from D:/R/R-Notes</p>
+</div>
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
@@ -144,7 +148,7 @@ if (&quot;devtools&quot; %in% rownames(installed.packages()) == FALSE) {
 <h2>Versions and libraries</h2>
 <p>Check paths, and which version of R we’re using</p>
 <pre class="r"><code>Sys.getenv(&quot;PATH&quot;)</code></pre>
-<pre><code>## [1] &quot;C:\\Program Files\\R\\R-3.3.2\\bin\\x64;C:\\RBuildTools\\3.4\\bin;C:\\RBuildTools\\3.4\\mingw_32\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\System32;C:\\Windows;C:\\Windows\\System32\\wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\ManagementStudio\\;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\DTS\\Binn\\;C:\\Users\\Suzanne\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft\\Web Platform Installer\\;C:\\Windows\\System32;C:\\Windows;C:\\Windows\\System32\\wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Addinsoft\\XLSTAT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program_Files\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;C:\\Program Files (x86)\\Common Files\\Acronis\\VirtualFile\\;C:\\Program Files (x86)\\Common Files\\Acronis\\VirtualFile64\\;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\;C:\\Users\\Suzanne\\AppData\\Local\\Microsoft\\WindowsApps&quot;</code></pre>
+<pre><code>## [1] &quot;C:\\Program Files\\R\\R-3.3.2\\bin\\x64;C:\\RBuildTools\\3.4\\bin;C:\\RBuildTools\\3.4\\mingw_32\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\ManagementStudio\\;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft\\Web Platform Installer\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Addinsoft\\XLSTAT;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program_Files\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;C:\\Program Files (x86)\\Common Files\\Acronis\\VirtualFile\\;C:\\Program Files (x86)\\Common Files\\Acronis\\VirtualFile64\\;C:\\Program Files (x86)\\Common Files\\Acronis\\SnapAPI\\;C:\\Users\\Suzanne\\AppData\\Local\\Microsoft\\WindowsApps;&quot;</code></pre>
 <pre class="r"><code>.libPaths()</code></pre>
 <pre><code>## [1] &quot;C:/Users/Suzanne/Documents/R/win-library/3.3&quot;
 ## [2] &quot;C:/Program Files/R/R-3.3.2/library&quot;</code></pre>
@@ -165,13 +169,27 @@ if (&quot;devtools&quot; %in% rownames(installed.packages()) == FALSE) {
 ## version.string R version 3.3.2 (2016-10-31)
 ## nickname       Sincere Pumpkin Patch</code></pre>
 </div>
-<div id="install-r-library-from-github" class="section level1">
-<h1>Install R library from github</h1>
+<div id="install-r-library-from-github" class="section level2">
+<h2>Install R library from github</h2>
 <p>This seems straightforward enough AS LONG AS you’ve got the correct bit installed on your PC. Easier said than done, this took me a day to configure. You need the “devtools” package installed, and the “additional build tools”. devtools is on CRAN so easy enough, but RTools34.exe needs to be downloaded from some other place, and then installed. You need (or at least I needed) to right click and “Run as administrator” to get the install to give you the prompts that are needed to set the path correctly, otherwise it will appear to install, but then not be found, leaving you in an endless loop. Sounds obvious enough once you have it figured out.</p>
 <p>After you have this all configured, then you can install a library from github instead of CRAN using -</p>
 <p>install_github(“suzannefox/cats-test”)</p>
 <p>Then … &gt; library(cats) &gt; cat_function(TRUE)</p>
-<p>FWIW - IMO This is all very hacky and much like life was in the early eighties with command line stuff all over the place. Some singularity proximity.</p>
+<p>FWIW - IMO This is all very hacky and much like life was in the early eighties with command line stuff all over the place.</p>
+</div>
+<div id="creating-s3-objects" class="section level2">
+<h2>Creating S3 objects</h2>
+<p>Based on : <a href="https://www.programiz.com/r-programming/S3-class" class="uri">https://www.programiz.com/r-programming/S3-class</a> With expanded bits</p>
+<p># this is valid s1 &lt;- student(“Paul”, 26, 3.7)</p>
+<p># throw an error s2 &lt;- student(“Paul”, 26, 5)</p>
+<p># ==============================================</p>
+<p># create an S3 class</p>
+<p># ==============================================</p>
+<p>student &lt;- function(n,a,g) { # we can add our own integrity checks if(g&gt;4 || g&lt;0) stop(“GPA must be between 0 and 4”)</p>
+<p>a &lt;- a*2</p>
+<p># create a dataframe x1 &lt;- c(2, 3, 5) x2 &lt;- c(“aa”, “bb”, “cc”) x3 &lt;- c(TRUE, FALSE, TRUE) df &lt;- data.frame(x1, x2, x3)</p>
+<p># load the values of this object value &lt;- list(name = n, age = a, GPA = g, test=df)</p>
+<p># class can be set using class() or attr() function attr(value, “class”) &lt;- “student” value }</p>
 </div>
 
 
