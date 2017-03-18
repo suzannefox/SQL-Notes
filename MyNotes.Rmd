@@ -57,7 +57,7 @@ Then ...
 > library(cats)
 > cat_function(TRUE)
 
-FWIW - IMO This is all very hacky and much like life was in the early eighties with command line stuff all over the place.
+FWIW - IMO This is all a bit hacky and much like life was years ago with command line stuff all over the place.
 
 ## Creating S3 objects
 
