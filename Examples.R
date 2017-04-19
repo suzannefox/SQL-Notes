@@ -33,6 +33,8 @@ iris.2 <- iris %>% mutate(Petal.Length=replace(Petal.Length,
 iris.3 <- iris %>% mutate(Petal.Length=replace(Petal.Length, 
                                                Species %in% c("setosa"), 
                                                2))
+
+iris.3 <- mutate(iris, Petal.Length = ifelse(Species=="setosa", 3, Petal.Length))
 # ============================================================
 # RODBC example
 
