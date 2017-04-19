@@ -38,6 +38,8 @@ iris.3 <- iris %>% mutate(Petal.Length=replace(Petal.Length,
 # ============================================================
 # RODBC example
 
+library(RODBC)
+
 SqlServer <- "P37\\SQLEXPRESS"
 SqlDatabase <- 'RSS_IMIS_TrendData_2011'
 
@@ -67,3 +69,18 @@ data.changes$DATE <- as.POSIXct(strptime(paste(data.changes$YEAR.x,
 
 data.changes$MONTH <- as.character(format(as.Date(data.changes$DATE), "%m"))
 
+# ============================================================
+# Excel
+library(xlsx)
+
+# read from an Excel sheet
+data.Candidates <- read.xlsx(paste(WorkDir, File.Candidates, sep=""), 
+                             sheetIndex = 2)
+
+# write to Excel
+write.xlsx(marks.check, 
+           file = paste(WorkDir,"BadTotals.xlsx",sep=""),
+           sheetName = "Check", 
+           row.names = FALSE)
+
+see - https://www.r-bloggers.com/write-data-frame-to-excel-file-using-r-package-xlsx/
