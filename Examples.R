@@ -1,5 +1,3 @@
-
-
 # ============================================================
 # use data.table to look forward and backward in a dataset
 
@@ -84,3 +82,7 @@ write.xlsx(marks.check,
            row.names = FALSE)
 
 see - https://www.r-bloggers.com/write-data-frame-to-excel-file-using-r-package-xlsx/
+
+# ============================================================
+# Assertr for variable checking
+https://cran.r-project.org/web/packages/assertr/vignettes/assertr.html
