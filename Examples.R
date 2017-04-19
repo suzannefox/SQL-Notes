@@ -39,7 +39,7 @@ iris.3 <- iris %>% mutate(Petal.Length=replace(Petal.Length,
 library(RODBC)
 
 SqlServer <- "P37\\SQLEXPRESS"
-SqlDatabase <- 'RSS_IMIS_TrendData_2011'
+SqlDatabase <- 'TrendData_2011'
 
 SqlConnection <- paste('driver={SQL Server};server=',
                        SqlServer,
