@@ -1,4 +1,4 @@
-# ============================================================
+ # ============================================================
 # use data.table to look forward and backward in a dataset
 
 library(data.table)
@@ -35,6 +35,14 @@ iris.3 <- iris %>% mutate(Petal.Length=replace(Petal.Length,
                                                2))
 
 iris.3 <- mutate(iris, Petal.Length = ifelse(Species=="setosa", 3, Petal.Length))
+
+# rename a variable
+# Note that the syntax is rename(data, New = Old)
+data.Candidates <- rename(data.Candidates, Candidate.Number = Candidate.number)
+
+# change all factors to character
+data.Candidates <- data.Candidates %>% mutate_if(is.factor, as.character)
+
 # ============================================================
 # RODBC example
 
