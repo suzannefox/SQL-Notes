@@ -1,4 +1,4 @@
- # ============================================================
+# ============================================================
 # use data.table to look forward and backward in a dataset
 
 library(data.table)
@@ -68,6 +68,15 @@ close(dbhandle)
 
 data.in[is.na(data.in)] <- 0
 
+# ============================================================
+# convert a key/value type list into a dataframe
+
+test <- list("1"="Box 1 New.xlsx",
+             "2"="Box 2.xlsx",
+             "3"="Box 3.xls",
+             "7.5"="Box 7.5.xlsx")
+
+test.df <- data.frame(Box.Number=names(test), SourceFile=unlist(test))
 
 # ============================================================
 # dates
