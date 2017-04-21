@@ -43,6 +43,17 @@ data.Candidates <- rename(data.Candidates, Candidate.Number = Candidate.number)
 # change all factors to character
 data.Candidates <- data.Candidates %>% mutate_if(is.factor, as.character)
 
+# change variables starting with "Section" from chr to numeric
+# the dot is a placeholder for the variable name
+marks <- marks %>% mutate_each(funs(as.numeric(.)), starts_with("Section"))     
+marks <- marks %>% mutate_each(funs(as.numeric(.)), starts_with("Total"))     
+
+# summaries
+summary <- df %>% summarise(COUNT = n(), 
+          MEAN_TOTAL_BEFORE = mean(Total), 
+          COUNT_UPLIFTED = sum(Uplifted=="YES"),
+          COUNT_REGRADED = sum(Regraded=="YES"))
+
 # ============================================================
 # RODBC example
 
@@ -79,6 +90,15 @@ test <- list("1"="Box 1 New.xlsx",
 test.df <- data.frame(Box.Number=names(test), SourceFile=unlist(test))
 
 # ============================================================
+# create a dataframe with a single record
+marks.FCIM9999 <- data.frame(Candidate.Number="FCIM9999",
+                            Section1.Q1=0,Section1.Q2=82,Section1.Q3=0,Section1.Q4=0,
+                            Total.Section.1=0.7025,
+                            Total=72,
+                            Grade="Pass with credit",
+                            SourceFile="Box Blank New.xlsx")
+
+# ============================================================
 # dates
 
 data.changes$DATE <- as.POSIXct(strptime(paste(data.changes$YEAR.x, 
@@ -96,9 +116,14 @@ data.Candidates <- read.xlsx(paste(WorkDir, File.Candidates, sep=""),
 
 # write to Excel
 write.xlsx(marks.check, 
-           file = paste(WorkDir,"BadTotals.xlsx",sep=""),
+           file = paste(WorkDir,"OutFile.xlsx",sep=""),
            sheetName = "Check", 
            row.names = FALSE)
+
+write.xlsx(marks.stats,
+           file = paste(WorkDir,"OutFile.xlsx",sep=""),
+           sheetName="Stats",
+           append=TRUE)
 
 see - https://www.r-bloggers.com/write-data-frame-to-excel-file-using-r-package-xlsx/
 
