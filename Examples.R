@@ -54,6 +54,9 @@ summary <- df %>% summarise(COUNT = n(),
           COUNT_UPLIFTED = sum(Uplifted=="YES"),
           COUNT_REGRADED = sum(Regraded=="YES"))
 
+# use grepl to filter - in this case installed libraries starting with g
+libraries.g <- as.data.frame(installed.packages()) %>% filter(grepl("^g",Package))
+
 # ============================================================
 # RODBC example
 
