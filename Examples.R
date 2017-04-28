@@ -92,6 +92,35 @@ test <- list("1"="Box 1 New.xlsx",
 
 test.df <- data.frame(Box.Number=names(test), SourceFile=unlist(test))
 
+# manipulating lists ==========================================
+# make 3 lists of lists
+data1 <- list(dd1 = rnorm(100),dd2 = rnorm(100),dd3 = rnorm(100))
+data2 <- list(dd1 = rnorm(100),dd2 = rnorm(100),dd3 = rnorm(100))
+data3 <- list(dd1 = rnorm(100),dd2 = rnorm(100),dd3 = rnorm(100))
+
+# make a list of lists of lists
+data <- list(d1 = data1, d1 = data2, d3 = data3)
+
+# get means
+data.means.1 <- lapply(data, sapply, mean)
+data.means.2 <- lapply(data, lapply, mean)
+data.means.3 <- rapply(data, mean, how='list')
+
+# get names
+res <- vector('list', length(data))
+for(i in seq_along(data)){
+  #print(paste("names data[i]",names(data[i])))
+
+  for(j in seq_along(data[[i]])){
+    print(paste("names data[i][j]",names(data[i]),names(data[[i]][j])))
+  }
+}
+
+names.1 <- lapply(data, sapply, names)
+names.2 <- rapply(data, names, how='list')
+names.3 <- lapply(data, lapply, names)
+
+names(data)
 # ============================================================
 # create a dataframe with a single record
 marks.FCIM9999 <- data.frame(Candidate.Number="FCIM9999",
