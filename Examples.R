@@ -162,3 +162,22 @@ see - https://www.r-bloggers.com/write-data-frame-to-excel-file-using-r-package-
 # ============================================================
 # Assertr for variable checking
 https://cran.r-project.org/web/packages/assertr/vignettes/assertr.html
+
+# ============================================================
+# convert a list to a df preserving the list item names
+
+library(dplyr)
+
+# make a test list
+xx <- list("a"="fred", "b"="jim", "c"="joe")
+
+# get the names as a df
+x1 <- data.frame(Tag=names(xx))
+# get the entries as a df by row
+x2 <- data.frame(Names=matrix(xx, nrow=length(xx), byrow=T))
+# bind them together
+x3 <- bind_cols(x1,x2)
+# or do it all in one statement
+x4 <- data.frame(Tag=names(xx),
+                 Names=matrix(xx, nrow=length(xx), byrow=T))
+
