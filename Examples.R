@@ -58,6 +58,14 @@ summary <- df %>% summarise(COUNT = n(),
 libraries.g <- as.data.frame(installed.packages()) %>% filter(grepl("^g",Package))
 
 # ============================================================
+# filter a dataframe by contents of another dataframe column
+
+x <- data.frame(Tag=c("a","b","c"), Dat=c(1,2,3))
+y <- data.frame(Tag=c("a","d","c"), Dat=c(1,2,3))
+
+x1 <- filter(x, Tag %in% y$Tag)
+
+# ============================================================
 # RODBC example
 
 library(RODBC)
