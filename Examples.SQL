@@ -1,4 +1,8 @@
 
+-- Date as YYYY-MM-dd character for sorting -------------------------------------------------------
+
+convert(char(10), JOIN_DATE, 126)
+
 -- Simulate a crosstab in SQL ---------------------------------------------------------------------
 
 -- SUMMARISE THE DATA BY GROUP
